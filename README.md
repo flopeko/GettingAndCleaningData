@@ -9,7 +9,7 @@ A full description of the data and how it was collected is available at the site
 
 The repo contains the following files:
   * README.md: explains the analysis files
-  * Codebook.md: describes the variables, the data, and any transformations or work performed to clean up the data
+  * CodeBook.md: describes the variables, the data, and any transformations or work performed to clean up the data
   * run_analysis.R: script that does the following:
     1. Merges the training and the test sets to create one data set.
     2. Extracts only the measurements on the mean and standard deviation for each measurement.
