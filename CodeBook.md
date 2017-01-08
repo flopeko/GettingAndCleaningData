@@ -66,26 +66,41 @@ The operations made to create the data set were:
 
 ### Reading original data:
 activity_labels<- read.table("activity_labels.txt")
+
 names(activity_labels)<- c("activity_id", "activity")
+
 features<- read.table("features.txt")
+
 X_train<- read.table("train/X_train.txt")
+
 y_train<- read.table("train/y_train.txt")
+
 subject_train<- read.table("train/subject_train.txt")
+
 X_test<- read.table("test/X_test.txt")
+
 y_test<- read.table("test/y_test.txt")
+
 subject_test<- read.table("test/subject_test.txt")
 
 ### Naming variables
 names(X_train)<- features[, 2]
+
 names(X_test)<- features[, 2]
+
 names(y_train)<- "activity_id"
+
 names(y_test)<- "activity_id"
+
 names(subject_train)<- "subject_no"
+
 names(subject_test)<- "subject_no"
 
 ### Combine the data
 train_data<- cbind(X_train, y_train, subject_train, type= "training")
+
 test_data<- cbind(X_test, y_test, subject_test, type= "test")
+
 ### Merging the training and the test sets to create one data set.
 raw_data<- rbind(train_data, test_data)
 
