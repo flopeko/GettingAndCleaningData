@@ -66,7 +66,6 @@ The operations made to create the data set were:
 
 > ### Reading original data:
 >> activity_labels<- read.table("activity_labels.txt")
-
 >> features<- read.table("features.txt")
 >> X_train<- read.table("train/X_train.txt")
 >> y_train<- read.table("train/y_train.txt")
@@ -84,25 +83,25 @@ names(y_test)<- "activity_id"
 names(subject_train)<- "subject_no"
 names(subject_test)<- "subject_no"
 
-### Combine the data
-train_data<- cbind(X_train, y_train, subject_train, type= "training")
+> ### Combine the data
+>> train_data<- cbind(X_train, y_train, subject_train, type= "training")
 test_data<- cbind(X_test, y_test, subject_test, type= "test")
 
-### Merging the training and the test sets to create one data set.
-raw_data<- rbind(train_data, test_data)
+> ### Merging the training and the test sets to create one data set.
+>> raw_data<- rbind(train_data, test_data)
 
-### Setting mean and standard deviation columns indexes
-mean_std_col<- grep("mea[n][\\(]|std()", names(raw_data)) # the [\\(] regular expression is added to avoid MeanFreq() variables
+>### Setting mean and standard deviation columns indexes
+>> mean_std_col<- grep("mea[n][\\(]|std()", names(raw_data)) # the [\\(] regular expression is added to avoid MeanFreq() variables
 
-### Extracting only the measurements on the mean and standard deviation for each measurement.
-mean_std_data<- cbind(raw_data[, mean_std_col], raw_data[, 562:564])
+> ### Extracting only the measurements on the mean and standard deviation for each measurement.
+>> mean_std_data<- cbind(raw_data[, mean_std_col], raw_data[, 562:564])
 
-### Using descriptive activity names to name the activities in the data set
-activity_names_data<- merge(x= mean_std_data, y= activity_labels, by= "activity_id")
+> ### Using descriptive activity names to name the activities in the data set
+>> activity_names_data<- merge(x= mean_std_data, y= activity_labels, by= "activity_id")
 col_order<- c(68, 70, 2:67)
 
-### Creating tidy_data data set
-tidy_data<- activity_names_data[, col_order]
+> ### Creating tidy_data data set
+>> tidy_data<- activity_names_data[, col_order]
 
 ## tidy_mean_data
 Contains a independent tidy data set with the average of each variable for each activity and each subject, obtained from the tidy_data data set.
