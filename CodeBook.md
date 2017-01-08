@@ -66,7 +66,7 @@ The operations made to create the data set were:
 
 > ### Reading original data:
 >> activity_labels<- read.table("activity_labels.txt")
->> names(activity_labels)<- c("activity_id", "activity")
+
 >> features<- read.table("features.txt")
 >> X_train<- read.table("train/X_train.txt")
 >> y_train<- read.table("train/y_train.txt")
@@ -75,7 +75,8 @@ The operations made to create the data set were:
 >> y_test<- read.table("test/y_test.txt")
 >> subject_test<- read.table("test/subject_test.txt")
 
-### Naming variables
+> ### Naming variables
+>> names(activity_labels)<- c("activity_id", "activity")
 names(X_train)<- features[, 2]
 names(X_test)<- features[, 2]
 names(y_train)<- "activity_id"
