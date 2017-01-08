@@ -104,4 +104,7 @@ col_order<- c(68, 70, 2:67)
 >> tidy_data<- activity_names_data[, col_order]
 
 ## tidy_mean_data
-Contains a independent tidy data set with the average of each variable for each activity and each subject, obtained from the tidy_data data set.
+Contains a independent tidy data set with the average of each variable for each activity and each subject, obtained from the tidy_data data set. The operations made to create the data set were:
+
+> ### Grouping and summarizing
+>> tidy_mean_data<- group_by(tidy_data, subject_no, activity) %>% summarise_each(funs(mean))
