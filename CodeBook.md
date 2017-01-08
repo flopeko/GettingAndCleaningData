@@ -65,16 +65,18 @@ Contains a subset of the original data after merging the training and the test d
 The operations made to create the data set were:
 
 ### Reading original data:
->activity_labels<- read.table("activity_labels.txt")
->names(activity_labels)<- c("activity_id", "activity")
->features<- read.table("features.txt")
->X_train<- read.table("train/X_train.txt")
->y_train<- read.table("train/y_train.txt")
->subject_train<- read.table("train/subject_train.txt")
->X_test<- read.table("test/X_test.txt")
->y_test<- read.table("test/y_test.txt")
->subject_test<- read.table("test/subject_test.txt")
+activity_labels<- read.table("activity_labels.txt")
+names(activity_labels)<- c("activity_id", "activity")
+features<- read.table("features.txt")
+X_train<- read.table("train/X_train.txt")
+y_train<- read.table("train/y_train.txt")
+subject_train<- read.table("train/subject_train.txt")
+X_test<- read.table("test/X_test.txt")
+y_test<- read.table("test/y_test.txt")
+subject_test<- read.table("test/subject_test.txt")
 
+activity_labels<- read.table("activity_labels.txt")
+features<- read.table("features.txt")
 ### Naming variables
 names(X_train)<- features[, 2]
 
