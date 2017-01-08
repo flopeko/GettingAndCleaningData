@@ -58,4 +58,9 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 A full description of the data and how it was collected is available at the site: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 ## tidy_data
-Contains a subset of the original data after 
+Contains a subset of the original data after merging the training and the test data sets. The subset is obtained extracting only the measurements on the mean and standard deviation for each measurement. Later, descriptive activity names were used to name the activities in the data set, and finally the data set was appropriately labeled with descriptive variable names.
+
+
+
+## tidy_mean_data
+Contains a independent tidy data set with the average of each variable for each activity and each subject, obtained from the tidy_data data set.
