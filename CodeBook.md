@@ -64,7 +64,7 @@ Contains a subset of the original data after merging the training and the test d
 
 The operations made to create the data set were:
 
-> Reading original data:
+> ### Reading original data:
 >> activity_labels<- read.table("activity_labels.txt")
 >> names(activity_labels)<- c("activity_id", "activity")
 >> features<- read.table("features.txt")
